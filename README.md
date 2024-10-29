@@ -117,10 +117,14 @@ public class main{
         System.out.println(human_1.toString()); //output: super human
                                                 //        can fly   
                                                 //        super power
+        
+        if(human_1 instanceof man){
+            System.out.println("That human is a man"); //output: That human is a man
+        }
     }
 }
 
-abstract class super_human{
+abstract class super_human implements man{
     public String get_super_human(){
         return "super human";
     }
@@ -134,14 +138,25 @@ interface super_power{
     public String get_super_power();
 }
 
+interface man{
+    public String get_man();
+}
+
 
 class human extends super_human implements fly,super_power{
+    @Override
     public String get_fly(){
         return "can fly";
     }
 
+    @Override
     public String get_super_power(){
         return "super power";
+    }
+
+    @Override
+    public String get_man() {
+        return "man";
     }
 
     @Override
@@ -156,6 +171,7 @@ class human extends super_human implements fly,super_power{
 
 ```bash
 super human
-can fly    
+can fly
 super power
+That human is a man
 ```
