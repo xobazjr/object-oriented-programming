@@ -13,12 +13,10 @@ public class lab_9_5 extends JFrame {
     lab_9_5() {
         setLayout(new BorderLayout());
 
-        // Display setup
         display.setEditable(false);
         display.setHorizontalAlignment(SwingConstants.RIGHT);
         add(display, BorderLayout.NORTH);
 
-        // Button panel setup
         p1.setLayout(new GridLayout(5, 4));
         JButton[] jbtButton = new JButton[20];
 
